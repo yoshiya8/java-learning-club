@@ -21,3 +21,13 @@ You will need to download and install the Java Development Kit 8 to program in J
 6. Just like with Git click next through all the questions on the installer.
 
 You will also need to get a GitHub.com account at https://github.com
+
+## Eclipse IDE
+Eclipse is a tool that will allow us to edit, run, and even debug our programs - it is our main programming tool.
+
+Installing Eclipse
+
+1. http://www.eclipse.org/downloads/
+2. Download Eclipse "IDE for Java Developers" - if you download the one for "Java *EE* Developers", it will work too, but it is much larger and is for web development (which we will not be getting into anytime soon).
+3. Eclipse is never really "installed" on your computer. It comes in a ZIP file and you need to extract the ZIP file to your desktop for convenience.
+4. 
