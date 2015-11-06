@@ -12,6 +12,7 @@ When install Git, there will be several screens asking you questions. Just selec
 
 ## JDK 8
 You will need to download and install the Java Development Kit 8 to program in Java - this contains the Java compiler which converts Java code into bit-code, and the Java virtual machine which will run the bit-code for your programs.
+
 1. http://www.oracle.com/technetwork/java/javase/downloads/index.html
 2. Find the "download" button corresponding to the JDK and click on it
 3. Select "Accept License Agreement" in the Java SE Development Kit box
