@@ -41,7 +41,7 @@ If no one else is using SSH on your computer (and they would know if they are), 
 ### Creating yourself an SSH public/private key
 
 1. Run Git Bash - you may see the icon on your computer or you can search from the start menu.
-2. Inside Git Bash enter to following command... make sure to replace the fabricated email address with the email address you used to sign up for GitHub *AND* press <ENTER> for all the questions it asks.
+2. Inside Git Bash enter to following command... make sure to replace the fabricated email address with the email address you used to sign up for GitHub *AND* press ENTER for all the questions it asks.
 
 ```bash
  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -61,7 +61,7 @@ If no one else is using SSH on your computer (and they would know if they are), 
 
 6. That command will print out a crazy mess which ends with your email address. This is your SSH public key. Using your mouse, select/highlight this stuff (in Git Bash, this will actually copy the selection to the clipboard)
 7. Go back to your browser window where you were in step 4.
-8. Click in the text area labeled, "Key" and then press <CNTRL>-v. This will paste the crazy mess into the text area - should look familiar to you.
+8. Click in the text area labeled, "Key" and then press CTRL-v. This will paste the crazy mess into the text area - should look familiar to you.
 9. Click on the "Add Key" button
  
 ### Cloning our Git repository onto your computer
