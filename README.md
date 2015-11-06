@@ -43,7 +43,9 @@ If no one else is using SSH on your computer (and they would know if they are), 
 1. Run Git Bash - you may see the icon on your computer or you can search from the start menu.
 2. Inside Git Bash enter to following command... make sure to replace the fabricated email address with the email address you used to sign up for GitHub *AND* press <ENTER> for all the questions it asks.
 
+```bash
  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
 
 ### Importing your SSH public key into GitHub
 
@@ -53,8 +55,10 @@ If no one else is using SSH on your computer (and they would know if they are), 
 4. Click the "Add SSH key" button on the right.
 5. Go back into your Git Bash window and enter the following command:
 
+```bash
  cat ~/.ssh/id_rsa.pub
- 
+```
+
 6. That command will print out a crazy mess which ends with your email address. This is your SSH public key. Using your mouse, select/highlight this stuff (in Git Bash, this will actually copy the selection to the clipboard)
 7. Go back to your browser window where you were in step 4.
 8. Click in the text area labeled, "Key" and then press <CNTRL>-v. This will paste the crazy mess into the text area - should look familiar to you.
@@ -65,10 +69,11 @@ If no one else is using SSH on your computer (and they would know if they are), 
 1. If your Git Bash is not open, then open it...
 2. Enter the following commands (the last command will ask you a scary question - just answer "yes"):
 
+```bash
  mkdir ~/git
  cd ~/git
  git clone git@github.com:yoshiya8/java-learning-club.git
-
+```
  
 
 
