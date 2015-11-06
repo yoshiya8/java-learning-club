@@ -29,5 +29,8 @@ Installing Eclipse
 
 1. http://www.eclipse.org/downloads/
 2. Download Eclipse "IDE for Java Developers" - if you download the one for "Java *EE* Developers", it will work too, but it is much larger and is for web development (which we will not be getting into anytime soon).
-3. Eclipse is never really "installed" on your computer. It comes in a ZIP file and you need to extract the ZIP file to your desktop for convenience.
-4. 
+3. Eclipse is never really "installed" on your computer. It comes in a ZIP file and just needs to be placed on your computer - so once the file is downloaded, open the ZIP file and drag the "Eclipse" folder onto your desktop.
+
+## GitHub
+GitHub is going to host our projects - in the software industry it is well recognized place for hosting countless open source projects. You will need to go to https://github.com/ and sign up for an account with your email.
+
