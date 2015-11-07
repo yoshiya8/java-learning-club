@@ -1,10 +1,10 @@
-package github.java_learning_club.season_one;
+package github.javalearningclub.seasonone;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class HelloWorld 
 {
     public static void main( String[] args )
     {
