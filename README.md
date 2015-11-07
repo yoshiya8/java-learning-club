@@ -32,7 +32,7 @@ Installing Eclipse
 3. Eclipse is never really "installed" on your computer. It comes in a ZIP file and just needs to be placed on your computer - so once the file is downloaded, open the ZIP file and drag the "Eclipse" folder onto your desktop.
 
 ## GitHub
-GitHub is going to host our projects - in the software industry it is well recognized place for hosting countless open source projects. You will need to go to https://github.com/ and sign up for an account with your email. Once you have an account, contact me and send me your GitHub username and the email address you used to sign up for GitHub and I will add you as a collaborator (a member) of this project.
+GitHub is going to host our projects - in the software industry it is well recognized place for hosting countless open source projects. You will need to go to https://github.com/ and sign up for an account with your email. Once you have an account, contact me and send me your GitHub username and the email address you used to sign up for GitHub and I will add you as a collaborator (a member) of this project. I will let you know when I have added you, then you can complete the rest of the steps below.
 
 This is where things get hairy...
 
