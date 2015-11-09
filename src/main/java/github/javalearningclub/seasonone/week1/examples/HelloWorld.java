@@ -1,5 +1,5 @@
 // This is a comment - the very first statement in your 'class' must be a definition of the package that it is a part of - this package name MUST match the directory path from the project root directory.
-package github.javalearningclub.seasonone;
+package github.javalearningclub.seasonone.week1.examples;
 
 /**
  * Your first project - simply prints out "Hello world!",but you can learn quite
