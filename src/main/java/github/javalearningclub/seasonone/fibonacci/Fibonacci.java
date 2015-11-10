@@ -11,6 +11,7 @@ public class Fibonacci {
 	
 	public int getNthFibonacciNumber(int n) {
 		// Good luck!
+		return 0;
 	}
 
 	public static void main(String[] args) {

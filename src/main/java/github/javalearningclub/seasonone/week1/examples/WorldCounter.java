@@ -40,42 +40,27 @@ public class WorldCounter {
 	}
 
 	/** This will greet the worlds using a FOR loop */
-	public void helloFor() {
+	public void greetWorlds() {
 		// The for loop is the most versatile of all loops there are three
 		// sections (separated by ';'). The first initializes a loop variable,
 		// the second is the condition, and the third increments the loop
 		// variable. It is actually a little fancier than that, but let's not
 		// worry about that right now.
-		for (int i = 0; i < countTo; i++) {
-			System.out.println("Hellow world #" + (i + 1));
-		}
-	}
-
-	/** This will greet the worlds using a WHILE loop */
-	public void helloWhile() {
-		// The while loops is the simplest - it repeats the statements inside
-		// the loop as along as the condition on the loop remains true.
-		int i = 0;
-		while (i < countTo) {
+		int myValue=1;	
+		
+		long i = 1;
+		long dollars = 0;
+		while (myValue >= 1) {
+		
+			System.out.println ("Factorial(" + i + ") = " + myValue);
+			//System.out.println("SMELLY GABE #" + (i*2 + 1));
+			//System.out.println("STINKY GABE #" + (i*2 + 2)); 
 			i = i + 1;
-			System.out.println("Hello world #" + i);
+			dollars =myValue/100; 
+			myValue=myValue*2;
 		}
-	}
-
-	/** This will greet the worlds using a DO-WHILE loop */
-	public void helloDoWhile() {
-		// The do-while loop is pretty simple - it repeats the statements inside
-		// the loop and will exit once the condition on the loop is false. I
-		// almost never use this type of loop - and it has an interesting quirk
-		// - it always executes at least one time. If you set countTo to zero
-		// you will see this will still print something out - so it basically is
-		// broken for this task, but this behavior can be desirable in other
-		// situations.
-		int i = 0;
-		do {
-			i = i + 1;
-			System.out.println("Hello world #" + i);
-		} while (i < countTo);
+		System.out.println (" $"+dollars);
+		
 	}
 
 	/**
@@ -88,23 +73,11 @@ public class WorldCounter {
 	 */
 	public static void main(String[] args) {
 		WorldCounter worldCounter = new WorldCounter(5);
-
 		System.out.println();
 		System.out.println("**************");
 		System.out.println("** FOR LOOP **");
 		System.out.println("**************");
-		worldCounter.helloFor();
+		worldCounter.greetWorlds();
 
-		System.out.println();
-		System.out.println("****************");
-		System.out.println("** WHILE LOOP **");
-		System.out.println("****************");
-		worldCounter.helloWhile();
-
-		System.out.println();
-		System.out.println("*******************");
-		System.out.println("** DO WHILE LOOP **");
-		System.out.println("*******************");
-		worldCounter.helloDoWhile();
 	}
 }

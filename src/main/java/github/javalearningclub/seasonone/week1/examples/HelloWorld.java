@@ -39,7 +39,6 @@ public class HelloWorld {
 	 *            is just a type that contains text.
 	 */
 	public static void main(String[] args) {
-		// Line comment: the next line prints out "Hello World!"
-		System.out.println("Hello World!");
+		System.out.println();
 	}
 }
