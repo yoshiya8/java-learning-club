@@ -31,6 +31,18 @@ public class Polygon extends ArrayList<Point> implements Shape {
 	}
 
 	/**
+	 * Add a vertex to the polygon
+	 * 
+	 * @param point
+	 *            the vertex to add.
+	 * @return This polygon for the fluent pattern.
+	 */
+	public Polygon addVertex(Point point) {
+		add(point);
+		return this;
+	}
+
+	/**
 	 * Set the color of the polygon
 	 * 
 	 * @param color
