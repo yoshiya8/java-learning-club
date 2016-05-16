@@ -49,7 +49,7 @@ public class WorldCounter {
 		int myValue=1;	
 		
 		long i = 1;
-		long dollars = 0;
+	long dollars = 0;
 		while (myValue >= 1) {
 		
 			System.out.println ("Factorial(" + i + ") = " + myValue);
