@@ -24,7 +24,7 @@ public class PoleTest {
 	}
 
 	@Test
-	void testAddDiskNormal() {
+	public void testAddDiskNormal() throws TowerOfHanoiException {
 		int height = 10;
 		List<Disk> diskList = new ArrayList<>();
 		Pole pole = new PoleImpl(height, Color.RED);
@@ -37,7 +37,7 @@ public class PoleTest {
 	}
 
 	@Test(expected = TowerOfHanoiException.class)
-	void testAddTooMany() {
+	public void testAddTooMany() throws TowerOfHanoiException {
 		int height = 10;
 		Pole pole = new PoleImpl(height, Color.RED);
 		for (int i = height + 2; i > 0; i--) {
@@ -47,7 +47,7 @@ public class PoleTest {
 	}
 
 	@Test(expected = TowerOfHanoiException.class)
-	void testAddOutOfOrder() {
+	public void testAddOutOfOrder() throws TowerOfHanoiException {
 		int height = 10;
 		Pole pole = new PoleImpl(height, Color.RED);
 		for (int i = 1; i <= height; i++) {
