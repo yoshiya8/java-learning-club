@@ -51,6 +51,11 @@ public class DiskImpl implements Disk{
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "DiskImpl [size=" + size + ", color=" + color + "]";
+	}
 	
 	
 }
