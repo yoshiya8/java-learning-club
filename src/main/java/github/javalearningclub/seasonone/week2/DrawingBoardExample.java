@@ -1,6 +1,7 @@
 package github.javalearningclub.seasonone.week2;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Point;
 
 import github.javalearningclub.drawing.Arc;
@@ -8,6 +9,9 @@ import github.javalearningclub.drawing.DrawingBoard;
 import github.javalearningclub.drawing.Line;
 import github.javalearningclub.drawing.Polygon;
 import github.javalearningclub.drawing.Text;
+import github.javalearningclub.drawing.Circle;
+import github.javalearningclub.seasonone.week2.StickMan;
+
 
 public class DrawingBoardExample {
 
@@ -51,7 +55,17 @@ public class DrawingBoardExample {
 		drawingBoard.sleep(2000);
 		drawingBoard.erase(arc);
 	}
-
+	public void doCircleExample() {
+		Point location = new Point(50, 250);
+		Circle circle = new Circle().setLocation(location).setColor(Color.BLUE).setDiameter(120);
+		drawingBoard.draw(circle);
+		for (int i = 1; i < 361; i++) {
+			drawingBoard.sleep(30);
+			location.x += 1;
+		}
+		drawingBoard.sleep(2000);
+		drawingBoard.erase(circle);
+	}
 	public void doLineExample() {
 		Point endPoint1 = new Point(10, 58);
 		Point endPoint2 = new Point(10, 100);
@@ -78,11 +92,28 @@ public class DrawingBoardExample {
 			drawingBoard.sleep(30);
 		}
 		drawingBoard.erase(polygon);
+		drawingBoard.sleep(500);
+	}
+	
+	public void doStickManExample(){
+		StickMan stickMan = new StickMan().setColor(Color.BLACK).setLocation(new Point (0, 0)).setSize(new Dimension(100, 250));
+		drawingBoard.draw(stickMan);
+		for (int r = 0; r < 50; r++) {
+			stickMan.setSize(new Dimension (r + 100, (r * 250) / 100 + 225));
+			stickMan.setLocation(new Point (r * 5, r));
+			drawingBoard.sleep(100);
+		}
+		drawingBoard.sleep(500);
+		drawingBoard.erase(stickMan);
+		drawingBoard.sleep(500);
+		
 	}
 
 	public static void main(String[] args) {
 		DrawingBoardExample example = new DrawingBoardExample();
 		example.start();
+		example.doStickManExample();
+		example.doCircleExample();
 		example.doTextExample();
 		example.doArcExample();
 		example.doLineExample();

@@ -10,26 +10,31 @@ public class Circle implements Shape{
     private Color color = null;
     private int diameter = 0;
     
-	public void drawCircle() {
-		
-				
-}
-
-	public void setLocation(Point location) {
+	public Circle setLocation(Point location) {
 		this.location = location;
+		return this;
 	}
 
-	public void setColor(Color color) {
+	public Circle setColor(Color color) {
 		this.color = color;
+		return this;
 	}
 
-	public void setDiameter(int diameter) {
+	public Circle setDiameter(int diameter) {
 		this.diameter = diameter;
+		return this;
 	}
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		if (location != null && diameter != 0) {
+			if (color == null) {
+				g.setColor(Color.BLACK);
+			}else{
+				g.setColor(color);
+			}
+			g.drawOval(location.x, location.y, diameter, diameter);
+		}
 	}
 }
 
