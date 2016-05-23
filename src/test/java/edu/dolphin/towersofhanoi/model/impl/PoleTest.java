@@ -56,4 +56,18 @@ public class PoleTest {
 		}
 	}
 
+	@Test
+	public void testRemove() throws TowerOfHanoiException {
+		int height = 10;
+		List<Disk> diskList = new ArrayList<>();
+		Pole pole = new PoleImpl(height, Color.RED);
+		for (int i = height; i > 0; i--) {
+			Disk disk = new DiskImpl(i, Color.GREEN);
+			pole.addDisk(disk);
+			diskList.add(0, disk);
+		}
+		diskList.forEach(disk -> assertEquals(disk, pole.removeDisk()));
+		assertNull(pole.removeDisk());
+	}
+
 }
