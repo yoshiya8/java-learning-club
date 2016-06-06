@@ -1,6 +1,8 @@
 package edu.dolphin.towersofhanoi.model.impl;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.dolphin.towersofhanoi.model.Disk;
@@ -9,16 +11,19 @@ import edu.dolphin.towersofhanoi.model.TowerOfHanoiException;
 
 public class PoleImpl implements Pole {
 	private final int height;
+	private final List<Disk> disks;
 	private final Color color;
+
 	public PoleImpl(int height, Color color) {
-	this.height = height;
-	this.color = color;
+		this.height = height;
+		this.color = color;
+		this.disks = new ArrayList<>();
 	}
 
 	@Override
 	public int getHeight() {
 		// TODO Auto-generated method stub
-		
+
 		return height;
 	}
 
@@ -30,20 +35,35 @@ public class PoleImpl implements Pole {
 
 	@Override
 	public void addDisk(Disk disk) throws TowerOfHanoiException {
-		// TODO Auto-generated method stub
-
+		if (disks.size() >= height) {
+			throw new TowerOfHanoiException("This pole is already full");
+		}
+		// Get the top disk
+		if (!disks.isEmpty()) {
+			Disk topDisk = disks.get(disks.size() - 1);
+			if (disk.getSize() >= topDisk.getSize()) {
+				// If there is a top disk and the disk we are adding is the same
+				// size or bigger, then throw and exception
+				throw new TowerOfHanoiException("You may not put a bigger disk on top of a smaller pole");
+			}
+		}
+		disks.add(disk);
 	}
 
 	@Override
 	public Disk removeDisk() {
 		// TODO Auto-generated method stub
-		return null;
+		if (disks.size() > 0) {
+			return disks.remove(disks.size() - 1);
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public List<Disk> getDisks() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return Collections.unmodifiableList(disks);
 	}
 
 	@Override
