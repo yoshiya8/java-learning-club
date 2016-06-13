@@ -2,6 +2,7 @@ package edu.dolphin.towersofhanoi.model.impl;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,13 +10,13 @@ import org.junit.Test;
 import edu.dolphin.towersofhanoi.model.Board;
 import edu.dolphin.towersofhanoi.model.Disk;
 import edu.dolphin.towersofhanoi.model.Pole;
+import edu.dolphin.towersofhanoi.model.TowerOfHanoiException;
 
 public class BoardTest {
 
 	@Test
-	public void testStandardBoard() {
-		// TODO: Create a board with 3 poles and height of 5.
-		Board board = new BoardImpl();
+	public void testStandardBoard() throws TowerOfHanoiException {
+		Board board = new BoardImpl(5, Color.BLACK, 3);
 		assertEquals(3, board.getNumberOfPoles());
 		assertEquals(5, board.getPole(0).getHeight());
 		assertEquals(5, board.getPole(1).getHeight());
@@ -34,37 +35,42 @@ public class BoardTest {
 		return topDisk;
 	}
 
-	private void testMove(Board board, int poleIx1, int poleIx2) {
-		Pole pole1 = board.getPole(poleIx1);
-		Pole pole2 = board.getPole(poleIx2);
+	private void testMove(Board board, int fromPoleIx, int toPoleIx) throws TowerOfHanoiException {
+		Pole fromPole = board.getPole(fromPoleIx);
+		Pole toPole = board.getPole(toPoleIx);
 
-		int pole1StartSize = pole1.getDisks().size();
-		Disk topDisk = getTopDisk(pole2);
-		board.moveDisk(poleIx1, poleIx2);
-		assertEquals(topDisk, getTopDisk(pole2));
+		int numberOfDisksOnFromPole = fromPole.getDisks().size();
+		int numberOfDisksOnToPole = toPole.getDisks().size();
+		Disk diskOnTopOfFromPole = getTopDisk(fromPole);
+
+		board.moveDisk(fromPoleIx, toPoleIx);
+		assertEquals(numberOfDisksOnFromPole - 1, fromPole.getDisks().size());
+		assertEquals(numberOfDisksOnToPole + 1, toPole.getDisks().size());
+
+		List<Disk> disksOnToPole = toPole.getDisks();
+		assertEquals(diskOnTopOfFromPole, disksOnToPole.get(disksOnToPole.size() - 1));
 	}
 
 	@Test
-	public void testMovingDisks() {
-		// TODO: Create a board with 3 poles and height of 5.
-		Board board = new BoardImpl();
-		board.moveDisk(0, 1);
-		assertEquals(4, board.getPole(0).getDisks().size());
-		assertEquals(1, board.getPole(1).getDisks().size());
-		assertEquals(0, board.getPole(2).getDisks().size());
-		board.moveDisk(0, 2);
-		assertEquals(3, board.getPole(0).getDisks().size());
-		assertEquals(1, board.getPole(1).getDisks().size());
-		assertEquals(1, board.getPole(2).getDisks().size());
-		board.moveDisk(1, 3);
-		assertEquals(3, board.getPole(0).getDisks().size());
-		assertEquals(0, board.getPole(1).getDisks().size());
-		assertEquals(2, board.getPole(2).getDisks().size());
-
-		// DO the move
-		// Get top disk for pole1
-		Disk topDisk; // write this
-		assertEquals(topDisk, topDisk1);
-
+	public void testMovingDisks() throws TowerOfHanoiException {
+		Board board = new BoardImpl(5, Color.BLUE, 3);
+		testMove(board, 0, 1);
+		testMove(board, 0, 2);
+		testMove(board, 1, 2);
 	}
+
+	@Test(expected = TowerOfHanoiException.class)
+	public void testMovingFromEmptyPeg() throws TowerOfHanoiException {
+		Board board = new BoardImpl(5, Color.BLUE, 3);
+		testMove(board, 1, 2);
+	}
+	
+	@Test(expected = TowerOfHanoiException.class)
+	public void testMovingOntoSmallerDisk() throws TowerOfHanoiException {
+		Board board = new BoardImpl(5, Color.BLUE, 3);
+		testMove(board, 0, 1);
+		testMove(board, 0, 2);
+		testMove(board, 0, 2);
+	}
+
 }
