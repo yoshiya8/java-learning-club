@@ -4,16 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Circle implements Shape{
-	
-    private Point location = null;
-    private Color color = null;
-    private int diameter = 0;
-    
-	public void drawCircle() {
-		
-				
-}
+public class Circle implements Shape {
+
+	private Point location = null;
+	private Color color = null;
+	private int diameter = 0;
 
 	public void setLocation(Point location) {
 		this.location = location;
@@ -29,7 +24,7 @@ public class Circle implements Shape{
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		g.setColor((color != null) ? color : Color.BLACK);
+		g.drawArc(location.x, location.y, diameter, diameter, 0,360);
 	}
 }
-
